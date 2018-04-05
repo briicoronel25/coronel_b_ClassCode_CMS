@@ -1,0 +1,75 @@
+#loginPage {
+    height: 115vh;
+}
+
+.loginCon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1,
+h2,
+p,
+label,
+input {
+    margin-bottom: 25px;
+    font-family: Arial;
+}
+
+#title {
+    margin-top: 2%;
+    font-size: 41px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+input {
+    float: left;
+    clear: both;
+    width: 100%;
+    border: 0;
+    /* padding-bottom: 10px; */
+    margin-right: 0.5%;
+}
+
+.inputLog {
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    /* margin-top: 15px; */
+    font-size: 20px;
+}
+
+label h2 {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 21px;
+}
+
+.SubBtn {
+    padding: 10px;
+    color: #6254a9;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+
+#createUser {
+    display: block;
+    text-align: center;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+.message {
+    color: #ECD1E4;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}

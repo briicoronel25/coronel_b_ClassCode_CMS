@@ -20,18 +20,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome to the Finest Selection of Blu-rays on the internets!</title>
+<link rel='stylesheet' href='./css/bootstrap.min.css' />
+<link rel='stylesheet' href='./css/bootstrap-grid.min.css' />
+<link rel='stylesheet' href='./css/bootstrap-reboot.min.css' />
+<link rel='stylesheet' href='./css/style.css' />
+<link rel="stylesheet" href="./css/index_style.css">
+<title>MovReviews</title>
 </head>
 <body>
 	<?php
-		include('includes/nav.html');
-
+		include('includes/header.html');
+		
+		echo "<h2> Welcome To MovReviews</h2>";
+		echo "<h4> Listing movies...</h4>";
 		if(!is_string($getMovies)){
 			while($row = mysqli_fetch_array($getMovies)){
 				echo "<img src=\"images/{$row['movies_cover']}\" alt=\"{$row['movies_title']}\">
-					<h2>{$row['movies_title']}</h2>
-					<p>{$row['movies_year']}</p>
-					<a href=\"details.php?id={$row['movies_id']}\">More Details...</a>
+					<h2 class=\"title\">{$row['movies_title']}</h2>
+					<p class=\"p_year\">{$row['movies_year']}</p>
+					<a class=\"a_details\" href=\"details.php?id={$row['movies_id']}\">More Details...</a>
 					<br><br>";
 			}
 		}else{

@@ -24,18 +24,35 @@
 <head>
 <meta charset="UTF-8">
 <title>CMS Portal Login</title>
+<link rel='stylesheet' href='../css/bootstrap.min.css' />
+<link rel='stylesheet' href='../css/bootstrap-grid.min.css' />
+<link rel='stylesheet' href='../css/bootstrap-reboot.min.css' />
+<link rel='stylesheet' href='../css/style.css' />
+<link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-	<h1>Welcome Company Name</h1>
-	<?php if(!empty($message)){echo $message;} ?>
-	<form action="admin_login.php" method="post">
-		<label>Username:</label>
-		<input type="text" name="username" value="">
-		<br>
-		<label>Password:</label>
-		<input type="text" name="password" value="">
-		<br>
-		<input type="submit" name="submit" value="Show me the money">
-	</form>
+	<?php include('../includes/header.html');?>
+
+	<div id="loginPage">
+	<div class="loginCon">
+		<h1 id="title">Welcome To MovReviews<br> Admin Site</h1>
+		
+		<?php if(!empty($message)){echo "<p class=\"message\">$message<p>";} ?>
+		
+		<form action="login.php" method="post">
+			<label><h2>Username:</h2></label>
+			<input class="inputLog" type="text" name="username" value="">
+			<br>
+			<label><h2>Password:</h2></label>
+			<input class="inputLog" type="password" name="password" value="">
+			<br>
+			<input class="SubBtn" type="submit" name="submit" value="Log in">
+		</form>
+	
+		<a id="createUser" href="./users/createuser.php">Create New Account Here</a>
+	</div>
+	</div>
+	<?php include('../includes/footer.html');?>
+
 </body>
 </html>
