@@ -1,5 +1,5 @@
 #loginPage {
-    height: 115vh;
+    height: 130vh;
 }
 
 .loginCon {
@@ -7,6 +7,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+footer {
+    position: relative;
+    top: 150%;
 }
 
 h1,
@@ -18,8 +23,8 @@ input {
     font-family: Arial;
 }
 
-#title {
-    margin-top: 2%;
+.title {
+    margin-top: 50% !important;
     font-size: 41px;
     padding-bottom: 15px;
     text-align: center;
@@ -72,4 +77,47 @@ label h2 {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+a.back {
+    display: block;
+    margin: 2% auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*Section for delete users */
+
+.delete_title {
+    text-align: center;
+}
+
+.delete_name {
+    display: block;
+    margin: 2%;
+    text-align: center;
+}
+
+.delete_link {
+    margin: 1%;
+    display: block;
+    text-align: center;
+}
+
+
+/*Section for delete movies*/
+
+.img-mov-delete {
+    width: 50%;
+    margin: 0% auto;
+    margin-top: 10%;
+    display: block;
+    text-align: center;
+}
+
+.name-mov-delete {
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }

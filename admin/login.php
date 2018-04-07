@@ -2,7 +2,7 @@
 	//ini_set('display_errors',1);
 	//error_reporting(E_ALL);
 
-	require_once('phpscripts/config.php');
+	require_once('./phpscripts/config.php');
 
 	$ip = $_SERVER['REMOTE_ADDR'];
 	// echo $id;
@@ -12,8 +12,9 @@
 		if($username !== "" && $password !== "") {
 			$result = logIn($username, $password, $ip);
 			$message = $result;
-			countLogins($id);
-
+			if($message=="success"){
+				redirect_to("index.php");
+			}
 		}else{
 			$message = "Please fill in the required fields";
 		}
@@ -23,7 +24,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CMS Portal Login</title>
+<title>MovReviews Portal Login</title>
 <link rel='stylesheet' href='../css/bootstrap.min.css' />
 <link rel='stylesheet' href='../css/bootstrap-grid.min.css' />
 <link rel='stylesheet' href='../css/bootstrap-reboot.min.css' />
@@ -49,7 +50,7 @@
 			<input class="SubBtn" type="submit" name="submit" value="Log in">
 		</form>
 	
-		<a id="createUser" href="./users/createuser.php">Create New Account Here</a>
+		<a id="createUser" href="users/createuser.php">Create New Account Here</a>
 	</div>
 	</div>
 	<?php include('../includes/footer.html');?>

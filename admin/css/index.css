@@ -1,0 +1,24 @@
+.title {
+    margin-top: 10%;
+    font-size: 41px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    margin: 3% 0%;
+}
+
+h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+a {
+    display: block;
+    margin: 2% auto;
+    text-align: center;
+    font-size: 1.5em;
+}
