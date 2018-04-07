@@ -1,9 +1,10 @@
 <?php
-	//ini_set('display_errors',1);
-	//error_reporting(E_ALL);
-
 	require_once('../phpscripts/config.php');
-	// confirm_logged_in();
+	
+	if(!confirm_logged_in()){
+        redirect_to("../login.php");
+    }
+	
 	$id = $_SESSION['user_id'];
 
 	if(isset($_POST['submit'])) {

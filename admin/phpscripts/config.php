@@ -7,5 +7,6 @@
 	require_once('crud_user.php');
 	require_once('addmovie.php');
 	require_once('delmovie.php');
+	require_once('updatemovie.php');
 	require_once('single_edit_form.php');
 ?>

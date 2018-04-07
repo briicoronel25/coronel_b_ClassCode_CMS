@@ -4,6 +4,11 @@
 
 	require_once('./phpscripts/config.php');
 
+	if(confirm_logged_in()){
+        redirect_to("index.php");
+	}
+
+
 	$ip = $_SERVER['REMOTE_ADDR'];
 	// echo $id;
 	if(isset($_POST['submit'])){

@@ -1,5 +1,5 @@
 <?php
-    
+
 	require_once('../phpscripts/config.php');
 
     if(!confirm_logged_in()){
@@ -16,9 +16,9 @@
             $html="
             <img class='img-mov-delete' src='../../images/{$row['movies_cover']}'>
             <h3 class='name-mov-delete'>{$row['movies_title']}</h3>
-            <form action='deletemovie.php' method='post'>
+            <form action='selectmovie.php' method='post'>
                 <input type='hidden' name='id' value={$row['movies_id']}>
-                <input type='submit' name='submit' value='Delete Movie'>
+                <input type='submit' name='submit' value='Edit Movie Info'>
             </form>
             ";
         }
@@ -29,7 +29,7 @@
     
     if(isset($_POST['submit'])){
         $id= $_POST['id'];
-        $message= deleteMovie($id);
+        redirect_to("editmovie.php?id=$id");
     }
 
 ?>
@@ -51,11 +51,11 @@
 
     <div id="loginPage">
 	<div class="loginCon">
-        <h1 class="title">Delete Movies</h1>
+        <h1 class="title">Edit Movies</h1>
         
         <?php if(!empty($message)){echo "<p class=\"message\">$message<p>";} ?>
 
-        <form action="deletemovie.php" method="get">
+        <form action="selectmovie.php" method="get">
             <label><h2>Select a Movie: </h2></label>
             <select required name="movie">
                 <option value="">Please Select a Movie</option>

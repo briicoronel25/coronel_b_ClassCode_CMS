@@ -1,17 +1,17 @@
 <?php
 
-
 	require_once('../phpscripts/config.php');
 
 	if(!confirm_logged_in()){
-		redirect_to("../login.php");
-	}
+        redirect_to("../login.php");
+    }
 	// $ip = $_SERVER['REMOTE_ADDR'];
 	// echo $id;
 	$tbl="tbl_genre";
 	$genQuery = getAll($tbl);
 
 	if(isset($_POST['submit'])){
+        $id= $_POST['id'];
 		$title = $_POST['title'];
 		$cover = $_FILES['cover'];
 		$year = $_POST['year'];
@@ -20,10 +20,19 @@
 		$trailer = $_POST['trailer'];
 		$release = $_POST['release'];
 		$genre = $_POST['genList'];
-		$uploadMovie = addMovie($title, $cover, $year, $runtime, $storyline, $trailer, $release, $genre);
+		$uploadMovie = updateMovie($id,$title, $cover, $year, $runtime, $storyline, $trailer, $release, $genre);
 		$message = $uploadMovie;
-	}
-
+    }
+    
+    $id= $_GET['id'];
+    $movQuery=getSingle("tbl_movies","movies_id",$id);
+    if($res = mysqli_fetch_array($movQuery)){
+        $movieTitle= $res['movies_title'];
+        $movieYear= $res['movies_year'];
+        $movieRelease= $res['movies_release'];
+        $movieRunTime= $res['movies_runtime'];
+        $movieStoryline= $res['movies_storyline'];
+    }
 ?>
 <!doctype html>
 <html>
@@ -48,7 +57,8 @@
     
     <?php if(!empty($message)){echo "<p class=\"message\">$message<p>";} ?>
     
-    <form action="createmovie.php" method="post" enctype="multipart/form-data">
+    <form action="editmovie.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value='<?php echo $id ?>'>
 		<label><h2>Movie Title:</h2></label>
 		<input class="inputLog" required type="text" name="title" value="<?php if(!empty($movieTitle)){echo $movieTitle;} ?>"><br><br>
 		<label><h2>Movie Cover Img:</h2></label>
@@ -64,7 +74,7 @@
 		<label><h2>Movie Release:</h2></label>
 		<input class="inputLog" required type="text" name="release" value="<?php if(!empty($movieRelease)){echo $movieRelease;} ?>"><br><br>
         <label><h2>Genre:</h2></label>
-        <select required name="genList">
+        <select name="genList">
 			<option value="">Please Select a genre</option>
 		<?php
 			while($row = mysqli_fetch_array($genQuery)){
@@ -72,7 +82,7 @@
 			}
 		?>
 		</select><br><br><br>
-		<input type="submit" name="submit" value="add movie">
+		<input type="submit" name="submit" value="update movie">
     </form>
     
     <?php 
