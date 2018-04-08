@@ -34,7 +34,7 @@
 		
 		//$size = getimagesize($orig);
 		include('connect.php');
-		$addString = "INSERT INTO tbl_movies VALUES( NULL, '{$cover['name']}', '{$title}', '{$year}', '{$runtime}', '{$storyline}', '{$_FILES['trailer']['name']}', '{$release}')";
+		$addString = "INSERT INTO tbl_movies VALUES( NULL, '{$cover['name']}', '{$title}', '{$year}', '{$runtime}', '{$storyline}', '{$_FILES['trailer']['name']}', '{$release}', CURRENT_TIMESTAMP )";
 		// echo $addString;
 
 		$addresult= mysqli_query($link, $addString);

@@ -27,11 +27,17 @@
 			$row = mysqli_fetch_array($getSingle);
 			echo "<img src=\"images/{$row['movies_cover']}\" alt=\"{$row['movies_title']}\">
 				<h2 class=\"title\">{$row['movies_title']}</h2>
+				<h5 class=\"title\"> Year </h5>
 				<p class=\"p_year\">{$row['movies_year']}</p>
-				<p class=\"p_details\">{$row['movies_storyline']}</p>
+				<h5 class=\"title\"> Runtime </h5>
+				<p class=\"p_details\">{$row['movies_runtime']}</p>
+				<h5 class=\"title\"> Release </h5>
+				<p class=\"p_details\">{$row['movies_release']}</p>
+				<h5 class=\"title\"> StoryLine </h5>
+				<p class=\"p_story\">{$row['movies_storyline']}</p>
 				";
 			
-			if($row['movies_trailer']!="trailer_default.jpg"){
+			if($row['movies_trailer']!=null && $row['movies_trailer']!="trailer_default.jpg" && $row['movies_trailer']!=""){
 				echo "<div id=\"video-container\">
 						<h4> Trailer </h4>
 						<video width=\"480\" height=\"320\" controls >
@@ -39,6 +45,7 @@
 						</video>
 					</div>";
 			}
+			echo "<p class='last_edit'> Last edited on: {$row['last_edit']}</p>";
 			echo "<a class=\"back\" href=\"index.php\">Back to home...</a>";
 		}else{
 			echo "<p class=\"error\">{$getSingle}</p>";

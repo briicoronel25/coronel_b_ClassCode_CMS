@@ -3,6 +3,13 @@ h2 {
     margin-bottom: 2%;
 }
 
+h3.no_results {
+    margin: 10% 0%;
+    color: tomato;
+    font-weight: bold;
+    text-align: center;
+}
+
 img {
     display: block;
     margin-left: auto;

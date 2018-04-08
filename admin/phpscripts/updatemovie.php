@@ -34,7 +34,7 @@
 		
 		//$size = getimagesize($orig);
         include('connect.php');
-        $updateString="UPDATE tbl_movies SET movies_title='{$title}', movies_year='{$year}', movies_runtime='{$runtime}', movies_storyline='{$storyline}', movies_release='{$release}' ";
+        $updateString="UPDATE tbl_movies SET movies_title='{$title}', movies_year='{$year}', movies_runtime='{$runtime}', movies_storyline='{$storyline}', movies_release='{$release}', last_edit=CURRENT_TIMESTAMP ";
         if($_FILES['cover']['name']){
             $updateString.= ", movies_cover='{$_FILES['cover']['name']}' ";
         }

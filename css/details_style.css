@@ -1,4 +1,5 @@
-h2 {
+h2,
+h5 {
     text-align: center;
     margin-bottom: 2%;
 }
@@ -26,10 +27,21 @@ img {
 
 .p_details {
     margin: 3%;
+    text-align: center;
+}
+
+.p_story {
+    margin: 3%;
 }
 
 #video-container {
     text-align: center;
+}
+
+.last_edit {
+    margin: 3%;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .back {
